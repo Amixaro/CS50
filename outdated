@@ -1,0 +1,35 @@
+mount_list = [
+"January",
+"February",
+"March",
+"April",
+"May",
+"June",
+"July",
+"August",
+"September",
+"October",
+"November",
+"December"
+]
+
+while True :
+    time = input("time:")
+    try :
+        if "/" in time :
+            mount , day , years = map(int , time.split("/"))
+            if 1 <= mount <= 12 and 1 <= day <= 31 and 1000 <= years <= 10000 :
+                break
+
+        elif "," in time :
+            md , years = time.split(",")
+            mount , day  = md.split(" ")
+            if mount in mount_list and int(day) <= 31:
+                mount = mount_list.index(mount) + 1
+                break
+    except :
+        print()
+        pass
+
+print(f"{int(years)}-{int(mount):02}-{int(day):02}")
+
