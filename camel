@@ -1,0 +1,11 @@
+def camel_to_snake(camel_str):
+    snake_str = ""
+    for char in camel_str:
+        if char.isupper():
+            snake_str += "_" + char.lower()
+        else:
+            snake_str += char
+    return snake_str.lstrip("_")
+camel_case_var = input("Enter a camel :")
+snake_case_var = camel_to_snake(camel_case_var)
+print(f"snake case: {snake_case_var}")
