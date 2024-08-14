@@ -1,0 +1,16 @@
+import random
+
+while True :
+    try :
+        n = int(input("level:"))
+        x = random.randint(1 , n)
+        y = int(input("Guesss:"))
+        if x == y :
+            print("Just right!")
+            break
+        if y > x :
+            print("Too large!")
+        if y < x :
+            print("Too small!")
+    except ValueError :
+        pass
