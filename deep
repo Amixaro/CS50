@@ -1,0 +1,9 @@
+x = str(input("Enter number:")).strip()
+if x.lower()=="forty two" :
+    print("yes")
+elif  x =="42":
+    print("yes")
+elif  x.lower() =="forty-two":
+    print("yes")
+else:
+    print("No")
