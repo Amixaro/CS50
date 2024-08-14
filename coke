@@ -1,0 +1,17 @@
+total_amount = 0
+Amount_Due = 50
+
+while True:
+    coin = int(input("Insert Coin: "))
+    Amount_Due -= coin
+
+    if coin in [10, 25, 5]:
+        if coin <= 50:
+            print("Amount Due:", Amount_Due)
+            total_amount += coin
+    else:
+        print("Amount Due: 50")
+
+    if Amount_Due <= 0:
+        print("Change Owed:",abs(Amount_Due))
+        break
