@@ -1,0 +1,3 @@
+txt = input()
+newtxt = txt.replace(" " , "...")
+print(newtxt)
