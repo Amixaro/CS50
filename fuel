@@ -1,0 +1,21 @@
+while True :
+    try:
+        number = input('enter :')
+        x , y = map(int , number.split("/"))
+        if y == 0 :
+            print("y must not be 0")
+        if x > y :
+            continue
+        new = round((x /y) * 100)
+        if new <= 1 :
+            print("E")
+        elif new >= 99 :
+            print("F")
+        else:
+            print(f"{int(new)}%")
+
+        break
+    except ValueError:
+        print("x , y not an integeer")
+    except ZeroDivisionError:
+        print("y must not be 0")
