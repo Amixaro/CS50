@@ -1,0 +1,14 @@
+x, y, z= input("enter math:").split()
+
+if y == "/" and z != "0" :
+    y_1 =  int(x) / int(z)
+    print(f"{y_1:.1f}")
+elif y == "*" :
+    y_2 = int(x) * int(z)
+    print(f"{y_2:.1f}")
+elif y == "+" :
+    y_3 = int(x) + int(z)
+    print(f"{y_3:.1f}")
+elif y == "-" :
+    y_4 = int(x) - int(z)
+    print(f"{y_4:.1f}")
