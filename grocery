@@ -1,0 +1,22 @@
+g_list = []
+
+while True :
+    try:
+        item = input("").upper()
+
+        g_list.append(item)
+    except EOFError :
+
+        item_count = {}
+        for i in g_list:
+            if i in item_count :
+                item_count[i] += 1
+            else:
+                item_count[i] = 1
+
+        sort_item = sorted(item_count.items())
+
+
+        for item , count in sort_item:
+            print(f"{count} {item}\n", end="")
+        break
