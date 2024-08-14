@@ -1,0 +1,36 @@
+import sys
+
+def main():
+    try:
+        if len(sys.argv) < 2:
+            sys.exit("Too few command-line arguments")
+        elif len(sys.argv) > 2:
+            sys.exit("Too many command-line arguments")
+        elif sys.argv[1].endswith(".py"):
+            pyfile = sys.argv[1]
+            code_lines = lines(pyfile)
+            print(code_lines)
+        else:
+            sys.exit("Not a Python file")
+    except FileNotFoundError:
+        sys.exit("File does not exist")
+
+def lines(pyfile):
+    with open(pyfile, "r") as file:
+        white_code = 0
+        docstring = 0
+        lines = 0
+        for digit in file:
+            lines += 1
+            if digit.isspace():
+                white_code += 1
+            digit = digit.lstrip()
+            if digit.startswith("#"):
+                docstring += 1
+
+            code_lines =lines - (docstring + white_code)
+
+    return code_lines
+
+
+main()
